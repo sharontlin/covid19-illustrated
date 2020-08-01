@@ -38,7 +38,7 @@ var quizQuestions = [
       answers: [
           {
               type: "High",
-              content: "What kind of mask do you wear?"
+              content: "I'll tie some paper to my face."
           },
           {
               type: "Medium",
