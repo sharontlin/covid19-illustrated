@@ -14,6 +14,10 @@
   font-size: large;
 }
 
+.App {
+  background: whitesmoke;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -21,4 +25,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.quiz {
+  background: whitesmoke;
+}
+
+.container {
+  background: white;
+  border: black 1px;
+}
+
+.long {
+  height: 600px;
+}
+
+.title {
+  text-align: center;
 }

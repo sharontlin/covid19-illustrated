@@ -3,9 +3,44 @@ import quizQuestions from './api/quizQuestions';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
 import logo from './svg/logo.svg';
+import { Navbar, Nav } from 'react-bootstrap';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-class App extends Component {
+class App extends Component { 
+
+
+  render() {
+    return (
+      <Router>
+      <div className="App">
+        <div className="App-header">
+          <Navbar>
+            <Nav>
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/quiz">Quiz</Nav.Link>
+              <Nav.Link href="/articles">Articles</Nav.Link>
+              <Nav.Link href="/about">About</Nav.Link>
+            </Nav>
+          </Navbar>
+          <img src={logo} className="App-logo" alt="logo" />
+          <h2>COVID-19 Illustrated</h2>
+        </div>
+          <Switch>
+            <Route path="/" exact component={() => <Home />} />
+            <Route path="/quiz" exact component={() => <QuizGame />} />
+            <Route path="/articles" exact component={() => <Articles />} />
+            <Route path="/about" exact component={() => <About />} />
+            <Route render={() => <h1>404: page not found</h1>} />
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
+}
+
+class QuizGame extends Component {
   constructor(props) {
     super(props);
 
@@ -128,15 +163,35 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>COVID-19 Illustrated</h2>
-        </div>
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
+      <div className="quiz">
+      {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
-    );
+    )
   }
-}
+};
+
+const Articles = () => {
+    return (
+      <div className="container long">
+        <h1 className="title">Articles</h1>
+      </div>
+    )
+};
+
+const About = () => {
+  return (
+    <div className="container long">
+      <h1 className="title">About</h1>
+    </div>
+  )
+};
+
+const Home = () => {
+  return (
+    <div className="container long">
+      <h1 className="title">Home</h1>
+    </div>
+  )
+};
 
 export default App;
