@@ -13,6 +13,10 @@ body {
   background: whitesmoke;
 }
 
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins'), url(./fonts/Poppins-Medium.otf) format('truetype');}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

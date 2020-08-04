@@ -170,17 +170,91 @@ class QuizGame extends Component {
   }
 };
 
-const Articles = () => {
+class Articles extends Component {
+  componentDidMount() {
+    const detail = document.querySelector('.detail');
+    const detailTitle = document.querySelector('.detail-title');
+    const detailBody = document.querySelector('.detail-body');
+    const masterItems = document.querySelectorAll('.master-item');
+
+    const terms = [
+      {category: 'Bacteria', text: 'Some text', img: ''},
+      {category: 'Coronavirus', text: 'Some text', img: ''},
+      {category: 'COVID-19', text: 'Some text', img: ''},
+      {category: 'Herd Immunity', text: 'Some text', img: ''},
+      {category: 'Pathogen', text: 'Some text', img: ''},
+      {category: 'Vaccination', text: 'Some text', img: ''},
+      {category: 'Virus', text: 'Some text', img: ''}
+    ];
+
+    masterItems.forEach((item) => {
+      item.addEventListener('click', function() {
+        clearSelected();
+        this.classList.add('active');
+
+        detail.classList.remove('hidden-md-down');
+
+        const page = this.innerHTML;
+        detailTitle.innerHTML = page;
+        detailBody.innerHTML = terms.filter(
+          function(terms) {
+            return terms.category === page;
+          }
+        )[0].text;
+      });
+    });
+
+    function clearSelected() {
+      for (let item of masterItems) {
+        item.classList.remove('active');
+      }
+    }
+  }
+
+  render() {
+    const masterItems = document.querySelectorAll('.master-item');
+
+    function back() {
+      console.log("clc");
+      document.querySelector('.detail').classList.add('hidden-md-down');
+      clearSelected();
+    }
+
+    function clearSelected() {
+      for (let item of masterItems) {
+        item.classList.remove('active');
+      }
+    }
+
     return (
       <div className="container long">
-        <h1 className="title">Articles</h1>
+        <br/>
+        <h1 className="title">Illustrated Glossary</h1>
+        <div className="ctn">
+          <div className="coll-3 master">
+            <div className="master-item active">Bacteria</div>
+            <div className="master-item">Coronavirus</div>
+            <div className="master-item">COVID-19</div>
+            <div className="master-item">Herd Immunity</div>
+            <div className="master-item">Pathogen</div>
+            <div className="master-item">Vaccination</div>
+            <div className="master-item">Virus</div>
+          </div>
+          <div className="coll-9 detail">
+            <button id="back" className="hidden-md" onClick={back}>Back</button>
+            <h1 className="detail-title text-center">Option 1</h1>
+            <p className="detail-body"></p>
+          </div>
+        </div>
       </div>
     )
+  }
 };
 
 const About = () => {
   return (
     <div className="container long">
+      <br/>
       <h1 className="title">About</h1>
     </div>
   )
@@ -189,6 +263,7 @@ const About = () => {
 const Home = () => {
   return (
     <div className="container long">
+      <br/>
       <h1 className="title">Home</h1>
     </div>
   )
