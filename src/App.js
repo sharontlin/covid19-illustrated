@@ -242,8 +242,8 @@ class Articles extends Component {
           </div>
           <div className="coll-9 detail">
             <button id="back" className="hidden-md" onClick={back}>Back</button>
-            <h1 className="detail-title text-center">Option 1</h1>
-            <p className="detail-body"></p>
+            <h1 className="detail-title text-center">Bacteria</h1>
+            <p className="detail-body">Some text</p>
           </div>
         </div>
       </div>
