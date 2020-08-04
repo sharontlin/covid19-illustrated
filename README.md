@@ -1,5 +1,7 @@
 # COVID-19 Illustrated
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c23bfb21-6a71-4432-8bc8-66d86a6a1481/deploy-status)](https://app.netlify.com/sites/covid19illustrated/deploys)
+
 Based on Mitch Gavan's [React Quiz](http://mitchgavan.github.io/react-multi-choice-quiz/).
 
 ## Available Scripts
