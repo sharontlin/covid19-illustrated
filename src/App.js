@@ -178,12 +178,25 @@ class Articles extends Component {
     const masterItems = document.querySelectorAll('.master-item');
 
     const terms = [
+      {category: 'Antibody Test', text: 'Some text', img: ''},
+      {category: 'Asymptomatic', text: 'Some text', img: ''},
       {category: 'Bacteria', text: 'Some text', img: ''},
-      {category: 'Coronavirus', text: 'Some text', img: ''},
       {category: 'COVID-19', text: 'Some text', img: ''},
-      {category: 'Herd Immunity', text: 'Some text', img: ''},
+      {category: 'Deadliness', text: 'Some text', img: ''},
+      {category: 'Disease', text: 'Some text', img: ''},
+      {category: 'Epidemic', text: 'Some text', img: ''},
+      {category: 'False Negative/Positive', text: 'Some text', img: ''},
+      {category: 'Herd immunity', text: 'Some text', img: ''},
+      {category: 'ICU', text: 'Some text', img: ''},
+      {category: 'Immunity', text: 'Some text', img: ''},
+      {category: 'Infectiousness', text: 'Some text', img: ''},
       {category: 'Pathogen', text: 'Some text', img: ''},
-      {category: 'Vaccination', text: 'Some text', img: ''},
+      {category: 'Placebo', text: 'Some text', img: ''},
+      {category: 'Protein', text: 'Some text', img: ''},
+      {category: 'Respiration', text: 'Some text', img: ''},
+      {category: 'SARS-CoV-2', text: 'Some text', img: ''},
+      {category: 'Spike protein', text: 'Some text', img: ''},
+      {category: 'Vaccine', text: 'Some text', img: ''},
       {category: 'Virus', text: 'Some text', img: ''}
     ];
 
@@ -232,12 +245,25 @@ class Articles extends Component {
         <h1 className="title">Illustrated Glossary</h1>
         <div className="ctn">
           <div className="coll-3 master">
-            <div className="master-item active">Bacteria</div>
-            <div className="master-item">Coronavirus</div>
+            <div className="master-item active">Antibody Test</div>
+            <div className="master-item">Asymptomatic</div>
+            <div className="master-item">Bacteria</div>
             <div className="master-item">COVID-19</div>
-            <div className="master-item">Herd Immunity</div>
+            <div className="master-item">Deadliness</div>
+            <div className="master-item">Disease</div>
+            <div className="master-item">Epidemic</div>
+            <div className="master-item">False Negative/Positive</div>
+            <div className="master-item">Herd immunity</div>
+            <div className="master-item">ICU</div>
+	          <div className="master-item">Immunity</div>
+            <div className="master-item">Infectiousness</div>
             <div className="master-item">Pathogen</div>
-            <div className="master-item">Vaccination</div>
+	          <div className="master-item">Placebo</div>
+            <div className="master-item">Protein</div>
+            <div className="master-item">Respiration</div>
+            <div className="master-item">SARS-CoV-2</div>
+            <div className="master-item">Spike protein</div>
+            <div className="master-item">Vaccine</div>
             <div className="master-item">Virus</div>
           </div>
           <div className="coll-9 detail">
@@ -265,6 +291,9 @@ const Home = () => {
     <div className="container long">
       <br/>
       <h1 className="title">Home</h1>
+      <div className="ctn"> 
+        <p>Hello</p>
+      </div>
     </div>
   )
 };

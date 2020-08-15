@@ -41,7 +41,7 @@
 }
 
 .long {
-  height: 600px;
+  height: 1300px;
 }
 
 .title {
@@ -106,7 +106,7 @@
   position: absolute;
   z-index: 11;
   color: #78A8BE;
-  height: 500px;
+  height: 1300px;
   background: white;
 }
 
@@ -146,6 +146,6 @@
 
   .master {
     border-right: 3px solid #775392;
-    height: 450px;
+    height: 1180px;
   }
 }
