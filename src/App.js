@@ -283,7 +283,7 @@ const About = () => {
       <br/>
       <h1 className="title">About</h1>
       <div className="ctn"> 
-        <p className="detail">This project was created by:
+        <p className="detail-sp">This project was created by:
         <ul>
           <li>Dr. Kelly Hallstrom, an assistant professor of microbiology at Saint Rose</li>
           <li>Sharon Lin, a student at MIT</li>
@@ -304,10 +304,12 @@ const Home = () => {
       <br/>
       <h1 className="title">Welcome!</h1>
       <div className="ctn"> 
-        <p className="detail">The COVID-19 Illustrated Project is an initiative to make epidemiology terms easier to digest for the average human. You can play our quiz to test your knowledge of risk factors, find animations of common terms to share with your friends, and read about the latest science surrounding COVID-19.<br/><br/>
+        <p className="detail-sp">The COVID-19 Illustrated Project is an initiative to make epidemiology terms easier to digest for the average human. You can play our quiz to test your knowledge of risk factors, find animations of common terms to share with your friends, and read about the latest science surrounding COVID-19.<br/><br/>
         
-        This project is funded through the #SciCommMake competition hosted by Sigma Xi, The Scientific Research Honor Society and Science Talk.</p>
+        This project is funded through the #SciCommMake competition hosted by Sigma Xi, The Scientific Research Honor Society and Science Talk.<br/><br/>
         <center><img alt="" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.maneinsights.com%2Fwp-content%2Fuploads%2F2015%2F12%2FSigma-Xi.png&f=1&nofb=1" width="300px"></img></center>
+        </p>
+        
       </div>
     </div>
   )

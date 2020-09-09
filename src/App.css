@@ -57,7 +57,7 @@
 }
 
 .master {
-  padding: 25px;
+  padding: 10px;
   border: none;
   box-sizing: border-box;
   height: 100vh;
@@ -110,7 +110,16 @@
   position: absolute;
   z-index: 11;
   color: #78A8BE;
-  /* height: 100vh; */
+  height: 115vh;
+  background: white;
+}
+
+.detail-sp {
+  padding: 25px;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 11;
+  color: #78A8BE;
   background: white;
 }
 
@@ -142,6 +151,7 @@
 
   .detail {
     position: static;
+    height: 1180px;
   }
 
   .hidden-md {
