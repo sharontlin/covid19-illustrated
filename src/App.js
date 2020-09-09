@@ -307,7 +307,7 @@ const Home = () => {
         <p className="detail">The COVID-19 Illustrated Project is an initiative to make epidemiology terms easier to digest for the average human. You can play our quiz to test your knowledge of risk factors, find animations of common terms to share with your friends, and read about the latest science surrounding COVID-19.<br/><br/>
         
         This project is funded through the #SciCommMake competition hosted by Sigma Xi, The Scientific Research Honor Society and Science Talk.</p>
-        <center><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.maneinsights.com%2Fwp-content%2Fuploads%2F2015%2F12%2FSigma-Xi.png&f=1&nofb=1" width="300px"></img></center>
+        <center><img alt="" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.maneinsights.com%2Fwp-content%2Fuploads%2F2015%2F12%2FSigma-Xi.png&f=1&nofb=1" width="300px"></img></center>
       </div>
     </div>
   )
