@@ -196,7 +196,7 @@ class Articles extends Component {
       {category: 'Respiration', text: 'Some text', img: ''},
       {category: 'SARS-CoV-2', text: 'Some text', img: ''},
       {category: 'Spike protein', text: 'Some text', img: ''},
-      {category: 'Vaccine', text: 'Some text', img: ''},
+      {category: 'Vaccine', text: 'A vaccine is a biological preparation that provides active acquired immunity to a particular infectious disease. A vaccine typically contains an agent that resembles a disease-causing microorganism and is often made from weakened or killed forms of the microbe, its toxins, or one of its surface proteins.', img: ''},
       {category: 'Virus', text: 'Some text', img: ''}
     ];
 
@@ -268,7 +268,7 @@ class Articles extends Component {
           </div>
           <div className="coll-9 detail">
             <button id="back" className="hidden-md" onClick={back}>Back</button>
-            <h1 className="detail-title text-center">Bacteria</h1>
+            <h1 className="detail-title text-center">Antibody Test</h1>
             <p className="detail-body">Some text</p>
           </div>
         </div>
@@ -279,20 +279,35 @@ class Articles extends Component {
 
 const About = () => {
   return (
-    <div className="container long">
+    <div className="container short">
       <br/>
       <h1 className="title">About</h1>
+      <div className="ctn"> 
+        <p className="detail">This project was created by:
+        <ul>
+          <li>Dr. Kelly Hallstrom, an assistant professor of microbiology at Saint Rose</li>
+          <li>Sharon Lin, a student at MIT</li>
+          <li>Philippa Steinberg, a student at UC Berkeley</li>
+          <li>Tarun Martheswaran, a high school student from Utah</li>
+        </ul><br/>
+
+        All graphics are reproduced with permission from the creator.
+        </p>
+      </div>
     </div>
   )
 };
 
 const Home = () => {
   return (
-    <div className="container long">
+    <div className="container short">
       <br/>
-      <h1 className="title">Home</h1>
+      <h1 className="title">Welcome!</h1>
       <div className="ctn"> 
-        <p>Hello</p>
+        <p className="detail">The COVID-19 Illustrated Project is an initiative to make epidemiology terms easier to digest for the average human. You can play our quiz to test your knowledge of risk factors, find animations of common terms to share with your friends, and read about the latest science surrounding COVID-19.<br/><br/>
+        
+        This project is funded through the #SciCommMake competition hosted by Sigma Xi, The Scientific Research Honor Society and Science Talk.</p>
+        <center><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.maneinsights.com%2Fwp-content%2Fuploads%2F2015%2F12%2FSigma-Xi.png&f=1&nofb=1" width="300px"></img></center>
       </div>
     </div>
   )

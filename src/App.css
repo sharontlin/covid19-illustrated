@@ -44,6 +44,10 @@
   height: 1300px;
 }
 
+.short {
+  height: 500px;
+}
+
 .title {
   text-align: center;
   font-family: "Poppins";
@@ -106,7 +110,7 @@
   position: absolute;
   z-index: 11;
   color: #78A8BE;
-  height: 1300px;
+  /* height: 100vh; */
   background: white;
 }
 
