@@ -34,6 +34,7 @@
 .container {
   background: white;
   border: black 1px;
+  width: 1200px;
 }
 
 .ctn {
@@ -41,7 +42,7 @@
 }
 
 .long {
-  height: 1300px;
+  height: 1400px;
 }
 
 .short {
@@ -151,7 +152,7 @@
 
   .detail {
     position: static;
-    height: 1180px;
+    height: 1250px;
   }
 
   .hidden-md {
@@ -160,6 +161,6 @@
 
   .master {
     border-right: 3px solid #775392;
-    height: 1180px;
+    height: 1250px;
   }
 }
