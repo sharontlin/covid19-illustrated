@@ -3,14 +3,15 @@ import quizQuestions from './api/quizQuestions';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
 import logo from './svg/logo.svg';
+import Graph from './components/Graph';
 import { Navbar, Nav } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
+import LongQuiz from 'react-quiz-component';
+import { quiz } from './components/quiz.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component { 
-
-
   render() {
     return (
       <Router>
@@ -29,7 +30,7 @@ class App extends Component {
         </div>
           <Switch>
             <Route path="/" exact component={() => <Home />} />
-            <Route path="/quiz" exact component={() => <QuizGame />} />
+            <Route path="/quiz" exact component={() => <QuizChoose />} />
             <Route path="/articles" exact component={() => <Articles />} />
             <Route path="/about" exact component={() => <About />} />
             <Route render={() => <h1>404: page not found</h1>} />
@@ -39,6 +40,86 @@ class App extends Component {
     );
   }
 }
+
+class QuizChoose extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      quiz: 0,
+    };
+  }
+
+  componentDidMount() {
+    const quizOne = document.querySelectorAll('.quiz1');
+    const quizTwo = document.querySelectorAll('.quiz2');
+
+    quizOne.forEach((item) => {
+      item.addEventListener('click', function() {
+        this.setState({quiz: 1});
+      }.bind(this));
+    });
+
+    quizTwo.forEach((item) => { 
+      item.addEventListener('click', function() {
+        this.setState({quiz: 2});
+      }.bind(this));
+    });
+
+  }
+
+  renderChoices() {
+    return (
+      <div className="container short">
+        <br/>
+        <h1 className="title">Choose a Quiz</h1>
+        <div className="row">
+          <div className="card quiz1">
+            <h1 className="title">Quiz 1</h1>
+          </div>
+          <br/>
+
+          <div className="card quiz2">
+          <h1 className="title">Quiz 2</h1>
+          </div>
+      </div>
+      </div>
+    );
+  }
+
+  renderQuiz1() {
+    return (
+      <div className="container med">
+        <br/>
+        <LongQuiz 
+          width="1000px"
+          quiz={quiz}
+          shuffle={true}
+          showInstantFeedback={true}
+          continueTillCorrect={true}
+          // onComplete={setQuizResult}
+        />
+      </div>
+    );
+  }
+
+  renderQuiz2() {
+    return (
+      <div className="container short">
+        <br/>
+      <QuizGame />
+      </div>
+    );
+  }
+
+  render() {
+    return (
+      <>
+      {this.state.quiz===0 ? this.renderChoices() : (this.state.quiz===1 ? this.renderQuiz1() : this.renderQuiz2())}
+      </>
+    )
+  }
+};
 
 class QuizGame extends Component {
   constructor(props) {
@@ -170,41 +251,68 @@ class QuizGame extends Component {
   }
 };
 
+class GraphImage extends Component {
+  render() {
+    return (
+      <div className="App"><Graph width='770' height='550' /></div>
+    )
+  }
+}
+
 class Articles extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      graph: 0,
+    };
+  }
+
   componentDidMount() {
     const detail = document.querySelector('.detail');
     const detailTitle = document.querySelector('.detail-title');
     const detailBody = document.querySelector('.detail-body');
+    const graphItem = document.querySelector('.graphItem');
+    const nonGraphItem = document.querySelectorAll('.nonGraphItem');
     const masterItems = document.querySelectorAll('.master-item');
 
     const terms = [
-      {category: 'Antibody Test', text: 'Some text', img: ''},
-      {category: 'Asymptomatic', text: 'Some text', img: ''},
-      {category: 'Bacteria', text: 'Some text', img: ''},
-      {category: 'COVID-19', text: 'Some text', img: ''},
-      {category: 'Deadliness', text: 'Some text', img: ''},
-      {category: 'Disease', text: 'Some text', img: ''},
-      {category: 'Epidemic', text: 'Some text', img: ''},
-      {category: 'False Negative/Positive', text: 'Some text', img: ''},
-      {category: 'Herd immunity', text: 'Some text', img: ''},
-      {category: 'ICU', text: 'Some text', img: ''},
-      {category: 'Immunity', text: 'Some text', img: ''},
-      {category: 'Infectiousness', text: 'Some text', img: ''},
-      {category: 'Pathogen', text: 'Some text', img: ''},
-      {category: 'Placebo', text: 'Some text', img: ''},
-      {category: 'Protein', text: 'Some text', img: ''},
-      {category: 'Respiration', text: 'Some text', img: ''},
-      {category: 'SARS-CoV-2', text: 'Some text', img: ''},
-      {category: 'Spike protein', text: 'Some text', img: ''},
-      {category: 'Vaccine', text: 'A vaccine is a biological preparation that provides active acquired immunity to a particular infectious disease. A vaccine typically contains an agent that resembles a disease-causing microorganism and is often made from weakened or killed forms of the microbe, its toxins, or one of its surface proteins.', img: ''},
-      {category: 'Virus', text: 'Some text', img: ''}
+      {category: 'Antibody Test', text: 'Some text', img: '', graph: ''},
+      {category: 'Asymptomatic', text: 'Some text', img: '', graph: ''},
+      {category: 'Bacteria', text: 'Some text', img: '', graph: ''},
+      {category: 'COVID-19', text: 'Some text', img: '', graph: ''},
+      {category: 'Deadliness', text: 'Some text', img: '', graph: ''},
+      {category: 'Disease', text: 'Some text', img: '', graph: ''},
+      {category: 'Epidemic', text: 'Some text', img: '', graph: ''},
+      {category: 'False Negative/Positive', text: 'Some text', img: '', graph: ''},
+      {category: 'Herd immunity', text: 'Some text', img: '', graph: ''},
+      {category: 'ICU', text: 'Some text', img: '', graph: ''},
+      {category: 'Immunity', text: 'Some text', img: '', graph: ''},
+      {category: 'Infectiousness', text: 'Some text', img: '', graph: ''},
+      {category: 'Pathogen', text: 'Some text', img: '', graph: ''},
+      {category: 'Placebo', text: 'Some text', img: '', graph: ''},
+      {category: 'Protein', text: 'Some text', img: '', graph: ''},
+      {category: 'Respiration', text: 'Some text', img: '', graph: ''},
+      {category: 'SARS-CoV-2', text: 'Some text', img: '', graph: ''},
+      {category: 'Spike protein', text: 'Some text', img: '', graph: ''},
+      {category: 'Vaccine', text: 'A vaccine is a biological preparation that provides active acquired immunity to a particular infectious disease. A vaccine typically contains an agent that resembles a disease-causing microorganism and is often made from weakened or killed forms of the microbe, its toxins, or one of its surface proteins.', img: '', graph: 'GraphImage'},
+      {category: 'Virus', text: 'Some text', img: '', graph: ''}
     ];
+
+    graphItem.addEventListener('click', function() {
+      this.setState({graph: 1});
+    }.bind(this));
+
+    nonGraphItem.forEach((item) => {
+      item.addEventListener('click', function() {
+        this.setState({graph: 0});
+      }.bind(this));
+    });
 
     masterItems.forEach((item) => {
       item.addEventListener('click', function() {
         clearSelected();
         this.classList.add('active');
-
         detail.classList.remove('hidden-md-down');
 
         const page = this.innerHTML;
@@ -222,6 +330,18 @@ class Articles extends Component {
         item.classList.remove('active');
       }
     }
+  }
+
+  renderNone() {
+    return (
+      <div></div>
+    );
+  }
+
+  renderGraph() {
+    return (
+      <GraphImage />
+    );
   }
 
   render() {
@@ -245,31 +365,34 @@ class Articles extends Component {
         <h1 className="title">Illustrated Glossary</h1>
         <div className="ctn">
           <div className="coll-3 master">
-            <div className="master-item active">Antibody Test</div>
-            <div className="master-item">Asymptomatic</div>
-            <div className="master-item">Bacteria</div>
-            <div className="master-item">COVID-19</div>
-            <div className="master-item">Deadliness</div>
-            <div className="master-item">Disease</div>
-            <div className="master-item">Epidemic</div>
-            <div className="master-item">False Negative/Positive</div>
-            <div className="master-item">Herd immunity</div>
-            <div className="master-item">ICU</div>
-	          <div className="master-item">Immunity</div>
-            <div className="master-item">Infectiousness</div>
-            <div className="master-item">Pathogen</div>
-	          <div className="master-item">Placebo</div>
-            <div className="master-item">Protein</div>
-            <div className="master-item">Respiration</div>
-            <div className="master-item">SARS-CoV-2</div>
-            <div className="master-item">Spike protein</div>
-            <div className="master-item">Vaccine</div>
-            <div className="master-item">Virus</div>
+            <div className="master-item nonGraphItem active">Antibody Test</div>
+            <div className="master-item nonGraphItem">Asymptomatic</div>
+            <div className="master-item nonGraphItem">Bacteria</div>
+            <div className="master-item nonGraphItem">COVID-19</div>
+            <div className="master-item nonGraphItem">Deadliness</div>
+            <div className="master-item nonGraphItem">Disease</div>
+            <div className="master-item nonGraphItem">Epidemic</div>
+            <div className="master-item nonGraphItem">False Negative/Positive</div>
+            <div className="master-item nonGraphItem">Herd immunity</div>
+            <div className="master-item nonGraphItem">ICU</div>
+	          <div className="master-item nonGraphItem">Immunity</div>
+            <div className="master-item nonGraphItem">Infectiousness</div>
+            <div className="master-item nonGraphItem">Pathogen</div>
+	          <div className="master-item nonGraphItem">Placebo</div>
+            <div className="master-item nonGraphItem">Protein</div>
+            <div className="master-item nonGraphItem">Respiration</div>
+            <div className="master-item nonGraphItem">SARS-CoV-2</div>
+            <div className="master-item nonGraphItem">Spike protein</div>
+            <div className="master-item graphItem">Vaccine</div>
+            <div className="master-item nonGraphItem">Virus</div>
           </div>
           <div className="coll-9 detail">
             <button id="back" className="hidden-md" onClick={back}>Back</button>
             <h1 className="detail-title text-center">Antibody Test</h1>
-            <p className="detail-body">Some text</p>
+            <p className="detail-body"></p>
+            <div className="detail-graph">
+              {this.state.graph===0 ? this.renderNone() : this.renderGraph()}
+            </div>
           </div>
         </div>
       </div>

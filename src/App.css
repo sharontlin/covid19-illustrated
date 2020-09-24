@@ -44,8 +44,12 @@
   height: 1400px;
 }
 
+.med {
+  height: 900px;
+}
+
 .short {
-  height: 500px;
+  height: 800px;
 }
 
 .title {
@@ -140,6 +144,26 @@
   background: #78A8BE;
 }
 
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 2px 16px;
+  z-index: 100;
+  transition: 0.3s;
+  width: 300px;
+  height: 300px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 20px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.graph {
+  border: 1px solid black;
+}
+
 @media only screen and (min-width: 786px) {
   .coll-3 {
     width: 25%;
@@ -162,4 +186,24 @@
     border-right: 3px solid #775392;
     height: 1250px;
   }
+
+  .short {
+    height: 550px;
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 2px 16px;
+    z-index: 100;
+    transition: 0.3s;
+    width: 300px;
+    height: 300px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+.react-quiz-container {
+  margin: 20px;
+  width: 1000px !important;
 }
