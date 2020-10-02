@@ -15,14 +15,14 @@ export const quiz =  {
       "answerSelectionType": "single",
       "answers": [
         "Only the vulnerable and symptomatic people need to be immune",
-        "-30%",
-        "-50%",
-        "-75%",
+        "30%",
+        "50%",
+        "75%",
         "100% "
       ],
       "correctAnswer": "4",
       "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+      "messageForIncorrectAnswer": "Incorrect answer. The correct answer is 75%.",
       "explanation": "explanation goes here",
       "point": "20",
       "segment": segment.advanced
@@ -41,7 +41,7 @@ export const quiz =  {
       ],
       "correctAnswer": "2",
       "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+      "messageForIncorrectAnswer": "Incorrect answer. The correct answer is up to 3 months.",
       "explanation": "explanation goes here",
       "point": "20",
       "segment": segment.basic
@@ -58,7 +58,7 @@ export const quiz =  {
       ],
       "correctAnswer": "3",
       "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+      "messageForIncorrectAnswer": "Incorrect answer. The correct answer is you will not get infected by the virus when exposed to it.",
       "explanation": "explanation goes here",
       "point": "10"
     },
@@ -75,7 +75,7 @@ export const quiz =  {
       ],
       "correctAnswer": [1,2,4],
       "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+      "messageForIncorrectAnswer": "Incorrect answer. The correct answer is through infection with the virus followed by recovery, through vaccination, and there is no such thing as permanent immunity to viruses because most of them constantly evolve.",
       "explanation": "explanation goes here",
       "point": "30",
       "segment": segment.medium
@@ -95,7 +95,7 @@ export const quiz =  {
       ],
       "correctAnswer": [1,2],
       "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+      "messageForIncorrectAnswer": "Incorrect answer. The correct answer is proteins of the virus and genomic matter (DNA or RNA) of the virus.",
       "explanation": "explanation goes here",
       "point": "20"
     },
@@ -111,7 +111,7 @@ export const quiz =  {
       ],
       "correctAnswer": "3",
       "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+      "messageForIncorrectAnswer": "Incorrect answer. The correct answer is before having been exposed, to prevent an infection.",
       "explanation": "explanation goes here",
       "point": "20"
     },
@@ -125,7 +125,7 @@ export const quiz =  {
         ],
         "correctAnswer": "1",
         "messageForCorrectAnswer": "Correct answer. Good job.",
-        "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+        "messageForIncorrectAnswer": "Incorrect answer. The correct answer is 1500s.",
         "explanation": "explanation goes here",
         "point": "20"
     },
@@ -139,7 +139,7 @@ export const quiz =  {
         ],
         "correctAnswer": "2",
         "messageForCorrectAnswer": "Correct answer. Good job.",
-        "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+        "messageForIncorrectAnswer": "Incorrect answer. The correct answer is false.",
         "explanation": "explanation goes here",
         "point": "20"
     },
@@ -153,7 +153,7 @@ export const quiz =  {
         ],
         "correctAnswer": "2",
         "messageForCorrectAnswer": "Correct answer. Good job.",
-        "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+        "messageForIncorrectAnswer": "Incorrect answer. The correct answer is false.",
         "explanation": "explanation goes here",
         "point": "20"
     },
@@ -167,7 +167,7 @@ export const quiz =  {
         ],
         "correctAnswer": "2",
         "messageForCorrectAnswer": "Correct answer. Good job.",
-        "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+        "messageForIncorrectAnswer": "Incorrect answer. The correct answer is false.",
         "explanation": "explanation goes here",
         "point": "20"
     },
@@ -181,7 +181,7 @@ export const quiz =  {
         ],
         "correctAnswer": "2",
         "messageForCorrectAnswer": "Correct answer. Good job.",
-        "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+        "messageForIncorrectAnswer": "Incorrect answer. The correct answer is false.",
         "explanation": "explanation goes here",
         "point": "20"
     },
@@ -196,7 +196,7 @@ export const quiz =  {
         ],
         "correctAnswer": "2",
         "messageForCorrectAnswer": "Correct answer. Good job.",
-        "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+        "messageForIncorrectAnswer": "Incorrect answer. The correct answer is 177.",
         "explanation": "explanation goes here",
         "point": "20"
     },
@@ -207,7 +207,7 @@ export const quiz =  {
         "answers": [
           "effectiveness",
           "toxicity",
-          "tests on target population (at least 30 000 people)",
+          "tests on target population (at least 30,000 people)",
           "tests on animals",
           "long term side effects",
           "short term side effects",
@@ -216,7 +216,7 @@ export const quiz =  {
         ],
         "correctAnswer": [1,2,3,4,5,6],
         "messageForCorrectAnswer": "Correct answer. Good job.",
-        "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+        "messageForIncorrectAnswer": "Incorrect answer. The correct answer is effectiveness, toxicity, tests on target population (at least 30,000 people), tests on animals, long term side effects, and short term side effects.",
         "explanation": "explanation goes here",
         "point": "20"
     },

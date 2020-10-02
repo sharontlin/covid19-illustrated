@@ -13,8 +13,15 @@ function Result(props) {
       transitionAppear
       transitionAppearTimeout={500}
     >
+      <h1 className="title">Results</h1>
+      <br/>
       <div>
-        Your risk factor to others is <strong>{props.quizResult}</strong>.
+        Your risk factor to others is <strong>{props.quizResult}</strong>.<br/><br/>
+
+        Resources here<br/><br/>
+        <form action="/quiz">
+        <button className="button">Play Again</button>
+        </form>
       </div>
     </CSSTransitionGroup>
   );

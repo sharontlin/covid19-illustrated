@@ -7,7 +7,7 @@ import Graph from './components/Graph';
 import { Navbar, Nav } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
-import LongQuiz from 'react-quiz-component';
+import LongQuiz from './quiz-component/Quiz';
 import { quiz } from './components/quiz.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -92,12 +92,12 @@ class QuizChoose extends Component {
       <div className="container med">
         <br/>
         <LongQuiz 
-          width="1000px"
+          width="100%"
           quiz={quiz}
-          shuffle={true}
+          shuffle={false}
           showInstantFeedback={true}
-          continueTillCorrect={true}
-          // onComplete={setQuizResult}
+          continueTillCorrect={false}
+          //onComplete={setQuizResult}
         />
       </div>
     );
@@ -254,7 +254,7 @@ class QuizGame extends Component {
 class GraphImage extends Component {
   render() {
     return (
-      <div className="App"><Graph width='770' height='550' /></div>
+      <div className="App"><Graph /></div>
     )
   }
 }
