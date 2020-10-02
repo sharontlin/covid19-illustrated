@@ -1,9 +1,9 @@
-import React, {useState, useEffect, useCallback, Fragment} from 'react';
+import React, {useState, useEffect, Fragment} from 'react';
 import PropTypes from 'prop-types';
-import QuizResultFilter from "./QuizResultFilter";
+// import QuizResultFilter from "./QuizResultFilter";
 import {checkAnswer, rawMarkup} from "./helpers";
 import InstantFeedback from "./InstantFeedback";
-import Explanation from "./Explanation";
+// import Explanation from "./Explanation";
 
 const Card = ({questions, appLocale, showDefaultResult, onComplete, customResultPage, showInstantFeedback, continueTillCorrect}) => {
   const [incorrectAnswer, setIncorrectAnswer] = useState(false);
@@ -12,11 +12,11 @@ const Card = ({questions, appLocale, showDefaultResult, onComplete, customResult
   const [endQuiz, setEndQuiz] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [buttons, setButtons] = useState({});
-  const [buttonClasses, setButtonClasses] = useState({});
+  // const [buttonClasses, setButtonClasses] = useState({});
   const [correct, setCorrect] = useState([]);
   const [incorrect, setIncorrect] = useState([]);
   const [userInput, setUserInput] = useState([]);
-  const [filteredValue, setFilteredValue] = useState('all');
+  // const [filteredValue] = useState('all');
   const [userAttempt, setUserAttempt] = useState(1);
   const [showDefaultResultState, setShowDefaultResult] = useState(true);
   const [answerSelectionTypeState, setAnswerSelectionType] = useState(undefined);
@@ -98,76 +98,76 @@ const Card = ({questions, appLocale, showDefaultResult, onComplete, customResult
     }
   };
 
-  const handleChange = (event) => {
-    setFilteredValue(event.target.value)
-  };
+  // const handleChange = (event) => {
+  //   setFilteredValue(event.target.value)
+  // };
 
-  const renderAnswerInResult = (question, userInputIndex) => {
-    const {answers, correctAnswer, questionType} = question;
-    let {answerSelectionType} = question;
-    let answerBtnCorrectClassName;
-    let answerBtnIncorrectClassName;
+  // const renderAnswerInResult = (question, userInputIndex) => {
+  //   const {answers, correctAnswer, questionType} = question;
+  //   let {answerSelectionType} = question;
+  //   let answerBtnCorrectClassName;
+  //   let answerBtnIncorrectClassName;
 
-    // Default single to avoid code breaking due to automatic version upgrade
-    answerSelectionType = answerSelectionType || 'single';
+  //   // Default single to avoid code breaking due to automatic version upgrade
+  //   answerSelectionType = answerSelectionType || 'single';
 
 
-    return answers.map((answer, index) => {
-      if (answerSelectionType === 'single') {
-          // correctAnswer - is string
-        answerBtnCorrectClassName = (`${index + 1}` === correctAnswer ? 'correct' : '');
-        answerBtnIncorrectClassName = (`${userInputIndex}` !== correctAnswer && `${index + 1}` === `${userInputIndex}` ? 'incorrect' : '');
-      } else {
-          // correctAnswer - is array of numbers
-        answerBtnCorrectClassName = (correctAnswer.includes(index + 1) ? 'correct' : '');
-        answerBtnIncorrectClassName = (!correctAnswer.includes(index + 1) && userInputIndex.includes(index + 1) ? 'incorrect' : '')
-      }
+  //   return answers.map((answer, index) => {
+  //     if (answerSelectionType === 'single') {
+  //         // correctAnswer - is string
+  //       answerBtnCorrectClassName = (`${index + 1}` === correctAnswer ? 'correct' : '');
+  //       answerBtnIncorrectClassName = (`${userInputIndex}` !== correctAnswer && `${index + 1}` === `${userInputIndex}` ? 'incorrect' : '');
+  //     } else {
+  //         // correctAnswer - is array of numbers
+  //       answerBtnCorrectClassName = (correctAnswer.includes(index + 1) ? 'correct' : '');
+  //       answerBtnIncorrectClassName = (!correctAnswer.includes(index + 1) && userInputIndex.includes(index + 1) ? 'incorrect' : '')
+  //     }
 
-      return (
-          <div key={index}>
-            <button disabled={true}
-                    className={"answerBtn btn " + answerBtnCorrectClassName + answerBtnIncorrectClassName}>
-              {questionType === 'text' && <span>{answer}</span>}
-              {questionType === 'photo' && <img src={answer} alt="image"/>}
-            </button>
-          </div>
-      )
-    });
-  };
+  //     return (
+  //         <div key={index}>
+  //           <button disabled={true}
+  //                   className={"answerBtn btn " + answerBtnCorrectClassName + answerBtnIncorrectClassName}>
+  //             {questionType === 'text' && <span>{answer}</span>}
+  //             {questionType === 'photo' && <img src={answer} alt=""/>}
+  //           </button>
+  //         </div>
+  //     )
+  //   });
+  // };
 
-  const renderQuizResultQuestions = useCallback(() => {
-    let filteredQuestions;
-    let filteredUserInput;
+  // const renderQuizResultQuestions = useCallback(() => {
+  //   let filteredQuestions;
+  //   let filteredUserInput;
 
-    if (filteredValue !== 'all') {
-      if (filteredValue === 'correct') {
-        filteredQuestions = questions.filter((question, index) => correct.indexOf(index) !== -1);
-        filteredUserInput = userInput.filter((input, index) => correct.indexOf(index) !== -1)
-      } else {
-        filteredQuestions = questions.filter((question, index) => incorrect.indexOf(index) !== -1);
-        filteredUserInput = userInput.filter((input, index) => incorrect.indexOf(index) !== -1)
-      }
-    }
+  //   if (filteredValue !== 'all') {
+  //     if (filteredValue === 'correct') {
+  //       filteredQuestions = questions.filter((question, index) => correct.indexOf(index) !== -1);
+  //       filteredUserInput = userInput.filter((input, index) => correct.indexOf(index) !== -1)
+  //     } else {
+  //       filteredQuestions = questions.filter((question, index) => incorrect.indexOf(index) !== -1);
+  //       filteredUserInput = userInput.filter((input, index) => incorrect.indexOf(index) !== -1)
+  //     }
+  //   }
 
-    return (filteredQuestions ? filteredQuestions : questions).map((question, index) => {
-      const userInputIndex = filteredUserInput ? filteredUserInput[index] : userInput[index];
+  //   return (filteredQuestions ? filteredQuestions : questions).map((question, index) => {
+  //     const userInputIndex = filteredUserInput ? filteredUserInput[index] : userInput[index];
 
-      // Default single to avoid code breaking due to automatic version upgrade
-      let answerSelectionType = question.answerSelectionType || 'single';
+  //     // Default single to avoid code breaking due to automatic version upgrade
+  //     let answerSelectionType = question.answerSelectionType || 'single';
 
-      return (
-          <div className="result-answer-wrapper" key={index + 1}>
-            <h3 dangerouslySetInnerHTML={rawMarkup(`Q${question.questionIndex}: ${question.question}`)}/>
-            {question.questionPic && <img src={question.questionPic} alt="image"/>}
-            {renderTags(answerSelectionType, question.correctAnswer.length, question.segment)}
-            <div className="result-answer">
-              {renderAnswerInResult(question, userInputIndex)}
-            </div>
-            <Explanation question={question} isResultPage={true}/>
-          </div>
-      )
-    })
-  }, [endQuiz, filteredValue]);
+  //     return (
+  //         <div className="result-answer-wrapper" key={index + 1}>
+  //           <h3 dangerouslySetInnerHTML={rawMarkup(`Q${question.questionIndex}: ${question.question}`)}/>
+  //           {question.questionPic && <img src={question.questionPic} alt="image"/>}
+  //           {renderTags(answerSelectionType, question.correctAnswer.length, question.segment)}
+  //           <div className="result-answer">
+  //             {renderAnswerInResult(question, userInputIndex)}
+  //           </div>
+  //           <Explanation question={question} isResultPage={true}/>
+  //         </div>
+  //     )
+  //   })
+  // }, [endQuiz, filteredValue]);
 
   const renderAnswers = (question, buttons) => {
     const {answers, correctAnswer, questionType} = question;
@@ -202,14 +202,14 @@ const Card = ({questions, appLocale, showDefaultResult, onComplete, customResult
                     onClick={() => onClickAnswer(index)}
                 >
                   {questionType === 'text' && <span>{answer}</span>}
-                  {questionType === 'photo' && <img src={answer} alt="image"/>}
+                  {questionType === 'photo' && <img src={answer} alt=""/>}
                 </button>)
                 : <button
                     onClick={() => onClickAnswer(index)}
                     className="answerBtn btn"
                 >
                   {questionType === 'text' && answer}
-                  {questionType === 'photo' && <img src={answer} alt="image"/>}
+                  {questionType === 'photo' && <img src={answer} alt=""/>}
                 </button>
             }
           </Fragment>
@@ -217,11 +217,11 @@ const Card = ({questions, appLocale, showDefaultResult, onComplete, customResult
   };
 
   const renderTags = (answerSelectionType, numberOfSelection, segment) => {
-    const {
-      singleSelectionTagText,
-      multipleSelectionTagText,
-      pickNumberOfSelection
-    } = appLocale;
+    // const {
+    //   // singleSelectionTagText,
+    //   // multipleSelectionTagText,
+    //   // pickNumberOfSelection
+    // } = appLocale;
 
     return (
         <div className="tag-container">
@@ -276,7 +276,7 @@ const Card = ({questions, appLocale, showDefaultResult, onComplete, customResult
           </div>
           <div>{appLocale.question} {currentQuestionIndex + 1}:</div>
           <h3 dangerouslySetInnerHTML={rawMarkup(question && question.question)}/>
-          {question && question.questionPic && <img src={question.questionPic} alt="image"/>}
+          {question && question.questionPic && <img src={question.questionPic} alt=""/>}
           {question && renderTags(answerSelectionTypeState, question.correctAnswer.length, question.segment)}
           {question && renderAnswers(question, buttons)}
           {showNextQuestionButton &&

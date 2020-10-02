@@ -43,7 +43,7 @@ const Quiz = ({ quiz, shuffle, showDefaultResult, onComplete, customResultPage, 
     }
 
     for(let i=0; i<questions.length; i++) {
-      const { question, questionType, questionPic, answerSelectionType, answers, correctAnswer } = questions[i];
+      var { question, questionType, answerSelectionType, answers, correctAnswer } = questions[i];
       if(!question) {
         console.error("Field 'question' is required.");
         return false;
@@ -53,7 +53,7 @@ const Quiz = ({ quiz, shuffle, showDefaultResult, onComplete, customResultPage, 
         console.error("Field 'questionType' is required.");
         return false;
       } else {
-        if(questionType != 'text' && questionType != 'photo') {
+        if(questionType !== 'text' && questionType !== 'photo') {
           console.error("The value of 'questionType' is either 'text' or 'photo'.");
           return false;
         }
