@@ -15,7 +15,7 @@ function Result(props) {
     >
       <h1 className="title">Results</h1>
       <br/>
-      <div>
+      <div className="quiz-results">
         Your risk factor to others is <strong>{props.quizResult}</strong>.<br/><br/>
 
         Resources here<br/><br/>

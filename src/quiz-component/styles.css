@@ -82,6 +82,7 @@
   text-align: center;
   padding: 10px 15px 10px 15px;
   font-weight: 900;
+  box-shadow: 2px 2px 8px #775392;
 }
 
 .react-quiz-container .result-answer-wrapper {
