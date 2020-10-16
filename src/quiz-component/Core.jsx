@@ -242,10 +242,10 @@ const Card = ({questions, appLocale, showDefaultResult, onComplete, customResult
       <div className="card-body">
         <h1 className="title">Results</h1>
         <br/>
-        <h4>
+        <h4 className="quiz-results">
           {appLocale.resultPageHeaderText.replace("<correctIndexLength>", correct.length).replace("<questionLength>", questions.length)}
         </h4>
-        <h4>
+        <h4 className="quiz-results">
           {appLocale.resultPagePoint.replace("<correctPoints>", correctPoints).replace("<totalPoints>", totalPoints)}
         </h4>
         <br/>
