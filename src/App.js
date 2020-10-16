@@ -10,6 +10,34 @@ import './App.css';
 import LongQuiz from './quiz-component/Quiz';
 import { quiz } from './components/quiz.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import antibody from './img/antibody.png';
+import antibodyTest from './img/antibodyTest.png';
+import asymptomatic from './img/asymptomatic.png';
+import bacterium from './img/bacterium.png';
+import coronavirus from './img/coronavirus.png';
+import covid from './img/COVID19.png';
+import deadliness from './img/deadliness.png';
+import disease from './img/disease.png';
+import dna from './img/DNA.png';
+import epidemic from './img/epidemic.png';
+import falseNeg from './img/falsenegative.png';
+// import herdImmunity from './img/herdImmunity.png';
+import host from './img/host.png';
+import icu from './img/icu.png';
+import immuneSystem from './img/immunesystem.png';
+import immunity from './img/immunity.gif';
+import infectiousness from './img/infectiousness.png';
+import mutation from './img/mutation.png';
+import pathogen from './img/pathogens.png';
+import placebo from './img/placebo.png';
+import protein from './img/protein.png';
+import respiration from './img/respiration.png';
+import sars from './img/sars.png';
+import spikeProtein from './img/spikeprotein.png';
+import treatment from './img/treatment.png';
+import vaccine from './img/vaccine.png';
+import virus from './img/viruses.png';
+import virusTest from './img/virustest.png';
 
 class App extends Component { 
   render() {
@@ -264,7 +292,7 @@ class Articles extends Component {
     super(props);
 
     this.state = {
-      graph: 0,
+      image: '',
     };
   }
 
@@ -272,42 +300,151 @@ class Articles extends Component {
     const detail = document.querySelector('.detail');
     const detailTitle = document.querySelector('.detail-title');
     const detailBody = document.querySelector('.detail-body');
-    const graphItem = document.querySelector('.graphItem');
-    const nonGraphItem = document.querySelectorAll('.nonGraphItem');
     const masterItems = document.querySelectorAll('.master-item');
+    const antibodyElem = document.querySelector('.antibody-div');
+    const antibodyTestElem = document.querySelector('.antibodyTest-div');
+    const asymptomaticElem = document.querySelector('.asymptomatic-div');
+    const bacteriumElem = document.querySelector('.bacterium-div');
+    const coronavirusElem = document.querySelector('.coronavirus-div');
+    const covidElem = document.querySelector('.covid-div');
+    const deadlinessElem = document.querySelector('.deadliness-div');
+    const diseaseElem = document.querySelector('.disease-div');
+    const dnaElem = document.querySelector('.dna-div');
+    const epidemicElem = document.querySelector('.epidemic-div');
+    const falseNegElem = document.querySelector('.falseNeg-div');
+    const herdImmunityElem = document.querySelector('.herdImmunity-div');
+    const hostElem = document.querySelector('.host-div');
+    const icuElem = document.querySelector('.icu-div');
+    const immuneSystemElem = document.querySelector('.immuneSystem-div');
+    const immunityElem = document.querySelector('.immunity-div');
+    const infectiousnessElem = document.querySelector('.infectiousness-div');
+    const mutationElem = document.querySelector('.mutation-div');
+    const pathogenElem = document.querySelector('.pathogen-div');
+    const placeboElem = document.querySelector('.placebo-div');
+    const proteinElem = document.querySelector('.protein-div');
+    const respirationElem = document.querySelector('.respiration-div');
+    const sarsElem = document.querySelector('.sars-div');
+    const spikeProteinElem = document.querySelector('.spikeProtein-div');
+    const treatmentElem = document.querySelector('.treatment-div');
+    const vaccineElem = document.querySelector('.vaccine-div');
+    const virusElem = document.querySelector('.virus-div');
+    const virusTestElem = document.querySelector('.virusTest-div');
 
     const terms = [
-      {category: 'Antibody Test', text: 'Some text', img: '', graph: ''},
-      {category: 'Asymptomatic', text: 'Some text', img: '', graph: ''},
-      {category: 'Bacteria', text: 'Some text', img: '', graph: ''},
-      {category: 'COVID-19', text: 'Some text', img: '', graph: ''},
-      {category: 'Deadliness', text: 'Some text', img: '', graph: ''},
-      {category: 'Disease', text: 'Some text', img: '', graph: ''},
-      {category: 'Epidemic', text: 'Some text', img: '', graph: ''},
-      {category: 'False Negative/Positive', text: 'Some text', img: '', graph: ''},
-      {category: 'Herd immunity', text: 'Some text', img: '', graph: ''},
-      {category: 'ICU', text: 'Some text', img: '', graph: ''},
-      {category: 'Immunity', text: 'Some text', img: '', graph: ''},
-      {category: 'Infectiousness', text: 'Some text', img: '', graph: ''},
-      {category: 'Pathogen', text: 'Some text', img: '', graph: ''},
-      {category: 'Placebo', text: 'Some text', img: '', graph: ''},
-      {category: 'Protein', text: 'Some text', img: '', graph: ''},
-      {category: 'Respiration', text: 'Some text', img: '', graph: ''},
-      {category: 'SARS-CoV-2', text: 'Some text', img: '', graph: ''},
-      {category: 'Spike protein', text: 'Some text', img: '', graph: ''},
-      {category: 'Vaccine', text: 'A vaccine is a biological preparation that provides active acquired immunity to a particular infectious disease. A vaccine typically contains an agent that resembles a disease-causing microorganism and is often made from weakened or killed forms of the microbe, its toxins, or one of its surface proteins.', img: '', graph: 'GraphImage'},
-      {category: 'Virus', text: 'Some text', img: '', graph: ''}
+      {category: 'Antibody', text: 'Antibodies are proteins made by white blood cells called B-cells. Antibodies help other cells in the immune system find and attack pathogens. They have a distinct Y-shaped appearance.', img: "antibodyPic", graph: ''},
+      {category: 'Antibody Test', text: 'This is a diagnostic test that examines if someone was exposed to a pathogen. It can show evidence of past exposure even if the person is not currently sick. It works by detecting antibodies that were made during the infection. Because antibodies stay in the body after an infection is gone, an antibody test is not reliable for diagnosing a current infection.', img: 'antibodyTest', graph: ''},
+      {category: 'Asymptomatic', text: 'The state of having a disease but showing no symptoms of it. Asymptomatic people who are carrying infectious diseases may still be able to pass the infection onto others.', img: 'asymptomatic', graph: ''},
+      {category: 'Bacterium', text: 'Each bacterium is a single, living cell. Many bacteria are harmless, but some are pathogens. Infections caused by bacteria can be treated with antibiotics, but can not be treated with antivirals. Vaccines can prevent some infections caused by bacteria.', img: 'bacterium', graph: ''},
+      {category: 'Coronavirus', text: 'Coronaviruses are types of viruses that have a unique pattern of proteins on their surface, and they use these proteins to attach to cells. Under a microscope, these proteins look like a crown around the virus, which is why we call these viruses coronaviruses: "corona" is Latin for crown. Some coronaviruses cause very mild illnesses while others, like SARS-CoV, MERS-CoV, and SARS-CoV-2 are associated with more severe illnesses.', img: 'coronavirus', graph: ''},
+      {category: 'COVID-19', text: 'This is the current name for the respiratory illness caused by SARS-CoV-2. It stands for Coronavirus Disease 2019. Current COVID-19 infections are diagnosed through tests that look specifically for the virus, while past infections are diagnosed through antibody tests. COVID-19 is generally associated with respiratory symptoms, but non-respiratory symptoms may also occur.', img: 'covid', graph: ''},
+      {category: 'Deadliness', text: 'The measure of the ability of something to cause death. The deadliness of a pathogen is determined by the fatality rate, or rate at which infected individuals die from the infection.', img: 'deadliness', graph: ''},
+      {category: 'Disease', text: 'A general state of being unwell as a result of a condition other than an injury. Diseases may be communicable (spread from person to person) or non-communicable, or acute (short-lasting) or chronic (long-term). Diseases are generally associated with specific symptoms that can be used for diagnoses.', img: 'disease', graph: ''},
+      {category: 'DNA', text: 'A type of genomic material that is passed from one organism to another. It contains all of the information needed for the organism to remain alive, and is passed down to future generations. Although viruses are not technically alive like cells, some have genomes that are made of DNA.', img: 'dna', graph: ''},
+      {category: 'Epidemic', text: 'An outbreak of a disease that is restricted to a particular region.', img: '', graph: ''},
+      {category: 'False Negative/Positive', text: 'No diagnostic test is 100% accurate all of the time. A false negative test result is one that comes back negative when it should have come back positive. A false positive test result is one that comes back positive when it should have come back negative. Different factors can affect whether a particular test is more or less likely to return false results.', img: 'falseneg', graph: ''},
+      {category: 'Herd immunity', text: 'Herd immunity is when a majority of the people in a community are immune to an infection. This stops pathogens from spreading throughout a community, which means even people without immunity are protected. It is acquired through infection or vaccination.', img: 'herdimmunity', graph: ''},
+      {category: 'Host', text: '', img: 'host', graph: ''},
+      {category: 'ICU', text: 'Intensive care unit. This is a specific area of a hospital that provides critical care to patients.', img: 'icu', graph: ''},
+      {category: 'Immune System', text: '', img: 'immunesystem', graph: ''},
+      {category: 'Immunity', text: 'Immunity is protection a person has from a pathogenic illness. This protection relies on the immune system knowing how to fight off the pathogen that causes the illness. Immunity is acquired through infection or through vaccination.', img: 'immunity', graph: ''},
+      {category: 'Infectiousness', text: 'How easily a person can transmit an infection to another individual. The level of infectiousness for a particular pathogen depends on a number of factors including the number of bacteria or viruses that are needed to cause an infection and the symptoms an infected person has. ', img: 'infectiousness', graph: ''},
+      {category: 'Mutation', text: '', img: 'mutation', graph: ''},
+      {category: 'Pathogen', text: 'Pathogens are microbes that cause an illness. Pathogens include bacteria, viruses, fungi, and parasites.', img: 'pathogen', graph: ''},
+      {category: 'Placebo', text: 'A treatment given to a person that is not expected to have a clinically-proven therapeutic benefit. Placebos are often used as a control when new drugs are tested.', img: 'placebo', graph: ''},
+      {category: 'Protein', text: 'A type of biological molecule that completes a variety of cell processes that are critical to life. Proteins can be found inside cells, on the surface of cells, and make up different kinds of structures including nails, hair, and skin. Many types of proteins are also found in plants, bacteria, and even viruses.', img: 'protein', graph: ''},
+      {category: 'Respiration', text: 'In terms of the human body, respiration is defined as the movement of oxygen from the environment into body tissues and the release of carbon dioxide from body tissues into the environment. It can also be thought as the act of inhaling oxygen and exhaling carbon dioxide.', img: 'respiration', graph: ''},
+      {category: 'SARS-CoV-2', text: 'This is the name currently given to the virus that causes COVID-19 disease. It stands for Severe Acute Respiratory Syndrome Coronavirus 2. ', img: 'sars', graph: ''},
+      {category: 'Spike protein', text: 'This is a type protein found on the surface of some types of viruses. If it is present on a virus, a spike protein helps that virus attach to cells.', img: 'spikeprotein', graph: ''},
+      {category: 'Treatment', text: 'A course of action that is taken to relieve someone of the symptoms associated with a disease. ', img: 'treatment', graph: ''},
+      {category: 'Vaccine', text: 'A vaccine is a biological preparation that provides active acquired immunity to a particular infectious disease. A vaccine typically contains an agent that resembles a disease-causing microorganism and is often made from weakened or killed forms of the microbe, its toxins, or one of its surface proteins.', img: 'vaccine', graph: 'GraphImage'},
+      {category: 'Virus', text: 'Non-living pathogen that consists of a genome, such as DNA or RNA, surrounded by proteins that form a layer called a capsid. Some viruses also have a membrane and spike proteins around the capsid similar to a cell membrane, although viruses themselves are not cells. Viruses must find and infect cells in order to reproduce.', img: 'virus', graph: ''},
+      {category: 'Virus Test', text: 'A test that determines if someone is currently sick with a virus. The test looks for the presence of the virus, such as virus proteins or virus genome, in patient samples.', img: 'virustest', graph: ''}
     ];
 
-    graphItem.addEventListener('click', function() {
-      this.setState({graph: 1});
+    antibodyElem.addEventListener('click', function() {
+      this.setState({image: 'antibody'});
     }.bind(this));
-
-    nonGraphItem.forEach((item) => {
-      item.addEventListener('click', function() {
-        this.setState({graph: 0});
-      }.bind(this));
-    });
+    antibodyTestElem.addEventListener('click', function() {
+      this.setState({image: 'antibodyTest'});
+    }.bind(this));
+    asymptomaticElem.addEventListener('click', function() {
+      this.setState({image: 'asymptomatic'});
+    }.bind(this));
+    bacteriumElem.addEventListener('click', function() {
+      this.setState({image: 'bacterium'});
+    }.bind(this));
+    coronavirusElem.addEventListener('click', function() {
+          this.setState({image: 'coronavirus'});
+    }.bind(this));
+    covidElem.addEventListener('click', function() {
+          this.setState({image: 'covid'});
+    }.bind(this));
+    deadlinessElem.addEventListener('click', function() {
+          this.setState({image: 'deadliness'});
+    }.bind(this));
+    diseaseElem.addEventListener('click', function() {
+          this.setState({image: 'disease'});
+    }.bind(this));
+    dnaElem.addEventListener('click', function() {
+          this.setState({image: 'dna'});
+    }.bind(this));
+    epidemicElem.addEventListener('click', function() {
+          this.setState({image: 'epidemic'});
+    }.bind(this));
+    falseNegElem.addEventListener('click', function() {
+          this.setState({image: 'falseNeg'});
+    }.bind(this));
+    herdImmunityElem.addEventListener('click', function() {
+          this.setState({image: 'herdImmunity'});
+    }.bind(this));
+    hostElem.addEventListener('click', function() {
+          this.setState({image: 'host'});
+    }.bind(this));
+    icuElem.addEventListener('click', function() {
+          this.setState({image: 'icu'});
+    }.bind(this));
+    immuneSystemElem.addEventListener('click', function() {
+          this.setState({image: 'immuneSystem'});
+    }.bind(this));
+    immunityElem.addEventListener('click', function() {
+          this.setState({image: 'immunity'});
+    }.bind(this));
+    infectiousnessElem.addEventListener('click', function() {
+          this.setState({image: 'infectiousness'});
+    }.bind(this));
+    mutationElem.addEventListener('click', function() {
+          this.setState({image: 'mutation'});
+    }.bind(this));
+    pathogenElem.addEventListener('click', function() {
+          this.setState({image: 'pathogen'});
+    }.bind(this));
+    placeboElem.addEventListener('click', function() {
+          this.setState({image: 'placebo'});
+    }.bind(this));
+    proteinElem.addEventListener('click', function() {
+          this.setState({image: 'protein'});
+    }.bind(this));
+    respirationElem.addEventListener('click', function() {
+          this.setState({image: 'respiration'});
+    }.bind(this));
+    sarsElem.addEventListener('click', function() {
+          this.setState({image: 'sars'});
+    }.bind(this));
+    spikeProteinElem.addEventListener('click', function() {
+          this.setState({image: 'spikeProtein'});
+    }.bind(this));
+    treatmentElem.addEventListener('click', function() {
+          this.setState({image: 'treatment'});
+    }.bind(this));
+    vaccineElem.addEventListener('click', function() {
+          this.setState({image: 'vaccine'});
+    }.bind(this));
+    virusElem.addEventListener('click', function() {
+          this.setState({image: 'virus'});
+    }.bind(this));
+    virusTestElem.addEventListener('click', function() {
+          this.setState({image: 'virusTest'});
+    }.bind(this));
 
     masterItems.forEach((item) => {
       item.addEventListener('click', function() {
@@ -365,34 +502,72 @@ class Articles extends Component {
         <h1 className="title">Illustrated Glossary</h1>
         <div className="ctn">
           <div className="coll-3 master">
-            <div className="master-item nonGraphItem active">Antibody Test</div>
-            <div className="master-item nonGraphItem">Asymptomatic</div>
-            <div className="master-item nonGraphItem">Bacteria</div>
-            <div className="master-item nonGraphItem">COVID-19</div>
-            <div className="master-item nonGraphItem">Deadliness</div>
-            <div className="master-item nonGraphItem">Disease</div>
-            <div className="master-item nonGraphItem">Epidemic</div>
-            <div className="master-item nonGraphItem">False Negative/Positive</div>
-            <div className="master-item nonGraphItem">Herd immunity</div>
-            <div className="master-item nonGraphItem">ICU</div>
-	          <div className="master-item nonGraphItem">Immunity</div>
-            <div className="master-item nonGraphItem">Infectiousness</div>
-            <div className="master-item nonGraphItem">Pathogen</div>
-	          <div className="master-item nonGraphItem">Placebo</div>
-            <div className="master-item nonGraphItem">Protein</div>
-            <div className="master-item nonGraphItem">Respiration</div>
-            <div className="master-item nonGraphItem">SARS-CoV-2</div>
-            <div className="master-item nonGraphItem">Spike protein</div>
-            <div className="master-item graphItem">Vaccine</div>
-            <div className="master-item nonGraphItem">Virus</div>
+            <div className="master-item active antibody-div">Antibody</div>
+            <div className="master-item antibodyTest-div">Antibody Test</div>
+            <div className="master-item asymptomatic-div">Asymptomatic</div>
+            <div className="master-item bacterium-div">Bacterium</div>
+            <div className="master-item coronavirus-div">Coronavirus</div>
+            <div className="master-item covid-div">COVID-19</div>
+            <div className="master-item deadliness-div">Deadliness</div>
+            <div className="master-item disease-div">Disease</div>
+            <div className="master-item dna-div">DNA</div>
+            <div className="master-item epidemic-div">Epidemic</div>
+            <div className="master-item falseNeg-div">False Negative/Positive</div>
+            <div className="master-item herdImmunity-div">Herd immunity</div>
+            <div className="master-item host-div">Host</div>
+            <div className="master-item icu-div">ICU</div>
+            <div className="master-item immuneSystem-div">Immune System</div>
+	          <div className="master-item immunity-div">Immunity</div>
+            <div className="master-item infectiousness-div">Infectiousness</div>
+            <div className="master-item mutation-div">Mutation</div>
+            <div className="master-item pathogen-div">Pathogen</div>
+	          <div className="master-item placebo-div">Placebo</div>
+            <div className="master-item protein-div">Protein</div>
+            <div className="master-item respiration-div">Respiration</div>
+            <div className="master-item sars-div">SARS-CoV-2</div>
+            <div className="master-item spikeProtein-div">Spike protein</div>
+            <div className="master-item treatment-div">Treatment</div>
+            <div className="master-item vaccine-div">Vaccine</div>
+            <div className="master-item virus-div">Virus</div>
+            <div className="master-item virusTest-div">Virus Test</div>
           </div>
           <div className="coll-9 detail">
             <button id="back" className="hidden-md" onClick={back}>Back</button>
-            <h1 className="detail-title text-center">Antibody Test</h1>
+            <h1 className="detail-title text-center"></h1>
             <p className="detail-body"></p>
-            <div className="detail-graph">
-              {this.state.graph===0 ? this.renderNone() : this.renderGraph()}
-            </div>
+            <center>
+            {this.state.image==="antibody" ? 
+                <img src={antibody} width="500px" alt=""/> : this.state.image==="antibodyTest" ?
+                <img src={antibodyTest} width="500px" alt=""/> : this.state.image==="asymptomatic" ?
+                <img src={asymptomatic} width="500px" alt=""/> : this.state.image==="bacterium" ?
+                <img src={bacterium} width="500px" alt=""/> : this.state.image==="coronavirus" ? 
+                <img src={coronavirus} width="500px" alt=""/> : this.state.image==="covid" ?
+                <img src={covid} width="500px" alt=""/> : this.state.image==="deadliness" ?
+                <img src={deadliness} width="500px" alt=""/> : this.state.image==="disease" ?
+                <img src={disease} width="500px" alt=""/> : this.state.image==="dna" ?
+                <img src={dna} width="500px" alt=""/> : this.state.image==="epidemic" ?
+                <img src={epidemic} width="500px" alt=""/> : this.state.image==="falseNeg" ?
+                <img src={falseNeg} width="500px" alt=""/> : this.state.image==="host" ?
+                // <img src={herdImmunity} width="500px" alt=""/> : this.state.image==="antibodyTest" ?
+                <img src={host} width="500px" alt=""/> : this.state.image==="icu" ?
+                <img src={icu} width="500px" alt=""/> : this.state.image==="immuneSystem" ?
+                <img src={immuneSystem} width="500px" alt=""/> : this.state.image==="immunity" ?
+                <img src={immunity} width="500px" alt=""/> : this.state.image==="infectiousness" ?
+                <img src={infectiousness} width="500px" alt=""/> : this.state.image==="mutation" ?
+                <img src={mutation} width="500px" alt=""/> : this.state.image==="pathogen" ?
+                <img src={pathogen} width="500px" alt=""/> : this.state.image==="placebo" ?
+                <img src={placebo} width="500px" alt=""/> : this.state.image==="protein" ?
+                <img src={protein} width="500px" alt=""/> : this.state.image==="respiration" ?
+                <img src={respiration} width="500px" alt=""/> : this.state.image==="sars" ?
+                <img src={sars} width="500px" alt=""/> : this.state.image==="spikeProtein" ?
+                <img src={spikeProtein} width="500px" alt=""/> : this.state.image==="treatment" ?
+                <img src={treatment} width="500px" alt=""/> : this.state.image==="vaccine" ?
+                <img src={vaccine} width="500px" alt=""/> : this.state.image==="virus" ?
+                <img src={virus} width="500px" alt=""/> : this.state.image==="virusTest" ?
+                <img src={virusTest} width="500px" alt=""/> : null
+            }
+            </center>
+            {/* {this.state.graph===0 ? this.renderNone() : this.renderGraph()} */}
           </div>
         </div>
       </div>

@@ -41,7 +41,7 @@
 }
 
 .long {
-  height: 1400px;
+  height: 1750px;
 }
 
 .med {
@@ -114,7 +114,7 @@
   position: absolute;
   z-index: 11;
   color: #78A8BE;
-  height: 120vh;
+  height: 170vh;
   background: white;
 }
 
@@ -230,7 +230,7 @@
 
   .master {
     border-right: 3px solid #775392;
-    height: 1250px;
+    height: 1600px;
   }
 
   .short {
