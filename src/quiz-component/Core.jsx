@@ -251,7 +251,7 @@ const Card = ({questions, appLocale, showDefaultResult, onComplete, customResult
         <br/>
         Resources here<br/><br/>
         <form action="/quiz">
-        <button className="button">Play Again</button>
+        <button className="playAgain">Play Again</button>
         </form>
         {/* <QuizResultFilter
             filteredValue={filteredValue}
@@ -274,8 +274,8 @@ const Card = ({questions, appLocale, showDefaultResult, onComplete, customResult
                 incorrectAnswer={incorrectAnswer}
             />
           </div>
-          <div>{appLocale.question} {currentQuestionIndex + 1}:</div>
-          <h3 dangerouslySetInnerHTML={rawMarkup(question && question.question)}/>
+          <div className="quiz-synopsis">{appLocale.question} {currentQuestionIndex + 1}:</div>
+          <h3 className="quizTitle" dangerouslySetInnerHTML={rawMarkup(question && question.question)}/>
           {question && question.questionPic && <img src={question.questionPic} alt=""/>}
           {question && renderTags(answerSelectionTypeState, question.correctAnswer.length, question.segment)}
           {question && renderAnswers(question, buttons)}

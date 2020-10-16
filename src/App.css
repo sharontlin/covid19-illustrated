@@ -49,14 +49,14 @@
 }
 
 .short {
-  height: 800px;
+  height: 1000px;
 }
 
 .title {
   text-align: center;
   font-family: "Poppins";
   border-bottom: 2px solid #E0DFFF;
-  padding: 15px;
+  padding: 15px 0 15px 0;
   color: #78A8BE;
 }
 
@@ -155,8 +155,8 @@
   z-index: 100;
   transition: 0.3s;
   width: 300px;
-  height: 300px;
-  margin-left: 100px;
+  height: 325px;
+  margin-left: 125px;
   margin-right: 100px;
   margin-top: 20px;
 }
@@ -234,7 +234,7 @@
   }
 
   .short {
-    height: 550px;
+    height: 600px;
   }
 
   .card {
@@ -243,13 +243,75 @@
     z-index: 100;
     transition: 0.3s;
     width: 300px;
-    height: 300px;
-    margin-left: 20px;
-    margin-right: 20px;
+    height: 350px;
+    margin-left: 80px;
+    margin-right: -30px;
+  }
+
+  .quiz-synopsis {
+    width: 800px;
   }
 }
 
 .react-quiz-container {
   margin: 20px;
   width: 100%;
+}
+
+.redBox {
+  background: #efc2c2;
+  padding: 8px 0 8px 0;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.redTitle {
+ background: #e7a1a1;
+ font-weight: 900;
+ text-align: center;
+ margin: 10px 0 0 0;
+ color: #6e2921;
+ padding: 7px 0 7px 0;
+ margin-bottom: 5px;
+}
+
+.redBody {
+  color: #dd7979;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+}
+
+.purpleButton {
+  color: #775392;
+  background: rgb(200, 198, 253);
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+  font-weight: 900;
+  box-shadow: 2px 2px 8px #775392;
+}
+
+.playAgain {
+  color: #775392;
+  background: rgb(200, 198, 253);
+  border-radius: 15px;
+  text-align: center;
+  font-weight: 900;
+  border: none;
+  padding: 10px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 2px 2px 8px #775392;
+}
+
+.quizTitle {
+  color: #7dabc0;
+}
+
+.quiz-synopsis {
+  width: 400px;
+  color: #7ab3ce;
 }

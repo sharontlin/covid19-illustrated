@@ -6,7 +6,7 @@ const segment = {
 
 export const quiz =  {
   "quizTitle": "Vaccines & Immunity Quiz",
-  "quizSynopsis": "synopsis goes here",
+  "quizSynopsis": "Do you know about the mechanisms of immunity, how vaccines work, or how many people must be vaccinated for a population to be free from a disease? Take this quiz to find out!",
   "questions": [
     {
       "question": "Immunity helps prevent the spread of a virus within a population. How many people need to be immune to SARS-CoV-2 to drastically slow the spread of the virus?",

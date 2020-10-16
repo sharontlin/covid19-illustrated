@@ -108,8 +108,8 @@ const Quiz = ({ quiz, shuffle, showDefaultResult, onComplete, customResultPage, 
       <div className="react-quiz-container">
         {!start &&
           <div>
-            <h2>{quiz.quizTitle}</h2>
-            <div>{appLocale.landingHeaderText.replace("<questionLength>" , quiz.questions.length)}</div>
+            <h2 className="quizTitle">{quiz.quizTitle}</h2>
+            <div className="quiz-synopsis">{appLocale.landingHeaderText.replace("<questionLength>" , quiz.questions.length)}</div>
             {quiz.quizSynopsis &&
               <div className="quiz-synopsis">
                   {quiz.quizSynopsis}

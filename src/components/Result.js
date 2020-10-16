@@ -20,7 +20,7 @@ function Result(props) {
 
         Resources here<br/><br/>
         <form action="/quiz">
-        <button className="button">Play Again</button>
+        <button className="playAgain">Play Again</button>
         </form>
       </div>
     </CSSTransitionGroup>

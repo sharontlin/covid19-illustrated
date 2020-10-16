@@ -103,12 +103,30 @@ class QuizChoose extends Component {
         <h1 className="title">Choose a Quiz</h1>
         <div className="row">
           <div className="card quiz1">
-            <h1 className="title">Quiz 1</h1>
+            <h1 className="title"><img src={logo} width="60px" alt="" />Quiz 1<img src={logo} width="60px" alt="" /></h1>
+            <div className="redBox">
+              <div className="redTitle">Immunity & Vaccines</div>
+              <div className="redBody">
+                How do you become immune?<br/>
+                How do vaccines work?<br/>
+                How many people need to be vaccinated?
+              </div>
+            </div>
+            <div className="purpleButton">START QUIZ</div>
           </div>
           <br/>
 
           <div className="card quiz2">
-          <h1 className="title">Quiz 2</h1>
+            <h1 className="title"><img src={logo} width="60px" alt="" />Quiz 2<img src={logo} width="60px" alt="" /></h1>
+            <div className="redBox">
+              <div className="redTitle">Transmission & Risk</div>
+              <div className="redBody">
+                What is your risk level for infection? <br/>
+                Which masks work? <br/>
+                Does the virus spread through surfaces?
+              </div>
+            </div>
+            <div className="purpleButton">START QUIZ</div>
           </div>
       </div>
       </div>
@@ -533,7 +551,7 @@ class Articles extends Component {
           </div>
           <div className="coll-9 detail">
             <button id="back" className="hidden-md" onClick={back}>Back</button>
-            <h1 className="detail-title text-center"></h1>
+            <h1 className="detail-title text-center"> </h1>
             <p className="detail-body"></p>
             <center>
             {this.state.image==="antibody" ? 

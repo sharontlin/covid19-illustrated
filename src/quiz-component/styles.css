@@ -65,15 +65,23 @@
 
 .react-quiz-container .answerBtn {
   width: 100%;
+  /* color: #7ab3ce; */
 }
 
 .react-quiz-container .startQuizWrapper .startQuizBtn {
   font-size: 15px;
-  border-radius: 2px;
+  /* border-radius: 2px; */
   line-height: 1.35135;
-  color: rgba(0,0,0,0.65);
-  background-color: #fff;
-  border: 1px solid #d9d9d9;
+  /* color: rgba(0,0,0,0.65); */
+  /* background-color: #fff; */
+  /* border: 1px solid #d9d9d9; */
+  color: #775392;
+  background: rgb(200, 198, 253);
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+  padding: 10px 15px 10px 15px;
+  font-weight: 900;
 }
 
 .react-quiz-container .result-answer-wrapper {
