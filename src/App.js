@@ -21,7 +21,7 @@ import disease from './img/disease.png';
 import dna from './img/DNA.png';
 import epidemic from './img/epidemic.png';
 import falseNeg from './img/falsenegative.png';
-// import herdImmunity from './img/herdImmunity.png';
+import herdImmunity from './img/herdImmunity.png';
 import host from './img/host.png';
 import icu from './img/icu.png';
 import immuneSystem from './img/immunesystem.png';
@@ -48,12 +48,13 @@ class App extends Component {
       <Router>
       <div className="App">
         <div className="App-header">
-          <Navbar>
+          <Navbar className="justify-content-center">
             <Nav>
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/quiz">Quiz</Nav.Link>
-              <Nav.Link href="/articles">Articles</Nav.Link>
-              <Nav.Link href="/about">About</Nav.Link>
+              <Nav.Link style={{fontWeight:'1000', paddingRight: '20px'}} href="/">Home</Nav.Link>
+              <Nav.Link style={{fontWeight:'1000', paddingRight: '20px'}} href="/quiz">Quiz</Nav.Link>
+              <Nav.Link style={{fontWeight:'1000', paddingRight: '20px'}} href="/glossary">Glossary</Nav.Link>
+              <Nav.Link style={{fontWeight:'1000', paddingRight: '20px'}} href="/resources">Resources</Nav.Link>
+              <Nav.Link style={{fontWeight:'1000'}}href="/about">About</Nav.Link>
             </Nav>
           </Navbar>
           <img src={logo} className="App-logo" alt="logo" />
@@ -62,7 +63,8 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={() => <Home />} />
             <Route path="/quiz" exact component={() => <QuizChoose />} />
-            <Route path="/articles" exact component={() => <Articles />} />
+            <Route path="/glossary" exact component={() => <Articles />} />
+            <Route path="/resources" exact component={() => <Resources />} />
             <Route path="/about" exact component={() => <About />} />
             <Route render={() => <h1>404: page not found</h1>} />
           </Switch>
@@ -364,12 +366,12 @@ class Articles extends Component {
       {category: 'Epidemic', text: 'An outbreak of a disease that is restricted to a particular region.', img: '', graph: ''},
       {category: 'False Negative/Positive', text: 'No diagnostic test is 100% accurate all of the time. A false negative test result is one that comes back negative when it should have come back positive. A false positive test result is one that comes back positive when it should have come back negative. Different factors can affect whether a particular test is more or less likely to return false results.', img: 'falseneg', graph: ''},
       {category: 'Herd immunity', text: 'Herd immunity is when a majority of the people in a community are immune to an infection. This stops pathogens from spreading throughout a community, which means even people without immunity are protected. It is acquired through infection or vaccination.', img: 'herdimmunity', graph: ''},
-      {category: 'Host', text: '', img: 'host', graph: ''},
+      {category: 'Host', text: 'An organism that is infected by a pathogen.', img: 'host', graph: ''},
       {category: 'ICU', text: 'Intensive care unit. This is a specific area of a hospital that provides critical care to patients.', img: 'icu', graph: ''},
-      {category: 'Immune System', text: '', img: 'immunesystem', graph: ''},
+      {category: 'Immune System', text: 'The collection of cells, tissues, and proteins that work together to prevent infections. The immune system is capable of "remembering" some pathogens, which helps prevent someone from becoming infected by those same pathogens multiple times.', img: 'immunesystem', graph: ''},
       {category: 'Immunity', text: 'Immunity is protection a person has from a pathogenic illness. This protection relies on the immune system knowing how to fight off the pathogen that causes the illness. Immunity is acquired through infection or through vaccination.', img: 'immunity', graph: ''},
       {category: 'Infectiousness', text: 'How easily a person can transmit an infection to another individual. The level of infectiousness for a particular pathogen depends on a number of factors including the number of bacteria or viruses that are needed to cause an infection and the symptoms an infected person has. ', img: 'infectiousness', graph: ''},
-      {category: 'Mutation', text: '', img: 'mutation', graph: ''},
+      {category: 'Mutation', text: 'A change that occurs in an organism\'s genome. Sometimes mutations do not change the biology of the organism, and sometimes mutations help or hurt the organism.', img: 'mutation', graph: ''},
       {category: 'Pathogen', text: 'Pathogens are microbes that cause an illness. Pathogens include bacteria, viruses, fungi, and parasites.', img: 'pathogen', graph: ''},
       {category: 'Placebo', text: 'A treatment given to a person that is not expected to have a clinically-proven therapeutic benefit. Placebos are often used as a control when new drugs are tested.', img: 'placebo', graph: ''},
       {category: 'Protein', text: 'A type of biological molecule that completes a variety of cell processes that are critical to life. Proteins can be found inside cells, on the surface of cells, and make up different kinds of structures including nails, hair, and skin. Many types of proteins are also found in plants, bacteria, and even viruses.', img: 'protein', graph: ''},
@@ -558,34 +560,34 @@ class Articles extends Component {
             <p className="detail-body"></p>
             <center>
             {this.state.image==="antibody" ? 
-                <img src={antibody} width="500px" alt=""/> : this.state.image==="antibodyTest" ?
-                <img src={antibodyTest} width="500px" alt=""/> : this.state.image==="asymptomatic" ?
-                <img src={asymptomatic} width="500px" alt=""/> : this.state.image==="bacterium" ?
-                <img src={bacterium} width="500px" alt=""/> : this.state.image==="coronavirus" ? 
-                <img src={coronavirus} width="500px" alt=""/> : this.state.image==="covid" ?
-                <img src={covid} width="500px" alt=""/> : this.state.image==="deadliness" ?
-                <img src={deadliness} width="500px" alt=""/> : this.state.image==="disease" ?
-                <img src={disease} width="500px" alt=""/> : this.state.image==="dna" ?
-                <img src={dna} width="500px" alt=""/> : this.state.image==="epidemic" ?
-                <img src={epidemic} width="500px" alt=""/> : this.state.image==="falseNeg" ?
-                <img src={falseNeg} width="500px" alt=""/> : this.state.image==="host" ?
-                // <img src={herdImmunity} width="500px" alt=""/> : this.state.image==="antibodyTest" ?
-                <img src={host} width="500px" alt=""/> : this.state.image==="icu" ?
-                <img src={icu} width="500px" alt=""/> : this.state.image==="immuneSystem" ?
-                <img src={immuneSystem} width="500px" alt=""/> : this.state.image==="immunity" ?
-                <img src={immunity} width="500px" alt=""/> : this.state.image==="infectiousness" ?
-                <img src={infectiousness} width="500px" alt=""/> : this.state.image==="mutation" ?
-                <img src={mutation} width="500px" alt=""/> : this.state.image==="pathogen" ?
-                <img src={pathogen} width="500px" alt=""/> : this.state.image==="placebo" ?
-                <img src={placebo} width="500px" alt=""/> : this.state.image==="protein" ?
-                <img src={protein} width="500px" alt=""/> : this.state.image==="respiration" ?
-                <img src={respiration} width="500px" alt=""/> : this.state.image==="sars" ?
-                <img src={sars} width="500px" alt=""/> : this.state.image==="spikeProtein" ?
-                <img src={spikeProtein} width="500px" alt=""/> : this.state.image==="treatment" ?
-                <img src={treatment} width="500px" alt=""/> : this.state.image==="vaccine" ?
-                <img src={vaccine} width="500px" alt=""/> : this.state.image==="virus" ?
-                <img src={virus} width="500px" alt=""/> : this.state.image==="virusTest" ?
-                <img src={virusTest} width="500px" alt=""/> : null
+                <img src={antibody} width="300px" alt=""/> : this.state.image==="antibodyTest" ?
+                <img src={antibodyTest} width="300px" alt=""/> : this.state.image==="asymptomatic" ?
+                <img src={asymptomatic} width="300px" alt=""/> : this.state.image==="bacterium" ?
+                <img src={bacterium} width="300px" alt=""/> : this.state.image==="coronavirus" ? 
+                <img src={coronavirus} width="300px" alt=""/> : this.state.image==="covid" ?
+                <img src={covid} width="300px" alt=""/> : this.state.image==="deadliness" ?
+                <img src={deadliness} width="300px" alt=""/> : this.state.image==="disease" ?
+                <img src={disease} width="300px" alt=""/> : this.state.image==="dna" ?
+                <img src={dna} width="300px" alt=""/> : this.state.image==="epidemic" ?
+                <img src={epidemic} width="300px" alt=""/> : this.state.image==="falseNeg" ?
+                <img src={falseNeg} width="300px" alt=""/> : this.state.image==="herdImmunity" ?
+                <img src={herdImmunity} width="300px" alt=""/> : this.state.image==="host" ?
+                <img src={host} width="300px" alt=""/> : this.state.image==="icu" ?
+                <img src={icu} width="300px" alt=""/> : this.state.image==="immuneSystem" ?
+                <img src={immuneSystem} width="300px" alt=""/> : this.state.image==="immunity" ?
+                <img src={immunity} width="300px" alt=""/> : this.state.image==="infectiousness" ?
+                <img src={infectiousness} width="300px" alt=""/> : this.state.image==="mutation" ?
+                <img src={mutation} width="300px" alt=""/> : this.state.image==="pathogen" ?
+                <img src={pathogen} width="300px" alt=""/> : this.state.image==="placebo" ?
+                <img src={placebo} width="300px" alt=""/> : this.state.image==="protein" ?
+                <img src={protein} width="300px" alt=""/> : this.state.image==="respiration" ?
+                <img src={respiration} width="300px" alt=""/> : this.state.image==="sars" ?
+                <img src={sars} width="300px" alt=""/> : this.state.image==="spikeProtein" ?
+                <img src={spikeProtein} width="300px" alt=""/> : this.state.image==="treatment" ?
+                <img src={treatment} width="300px" alt=""/> : this.state.image==="vaccine" ?
+                <img src={vaccine} width="300px" alt=""/> : this.state.image==="virus" ?
+                <img src={virus} width="300px" alt=""/> : this.state.image==="virusTest" ?
+                <img src={virusTest} width="300px" alt=""/> : null
             }
             </center>
             {/* {this.state.graph===0 ? this.renderNone() : this.renderGraph()} */}
@@ -594,6 +596,27 @@ class Articles extends Component {
       </div>
     )
   }
+};
+
+const Resources = () => {
+  return (
+    <div className="container long">
+      <br/>
+      <h1 className="title">Resources</h1>
+      <div className="ctn"> 
+       {/* <embed src="./infographic.pdf" type="application/pdf" width="100%" height="1400px"/>  */}
+       <object data='./infographic.pdf' width="100%" height="1400px">
+          <p>Oops! Your browser doesn't support PDFs!</p>
+          <p><a href="./infographic.pdf">Download Infographic Instead</a></p>
+      </object>
+
+       <h3 style={{marginTop: '20px'}}>Links to More Resources</h3>
+       <ul>
+         <li><a href="https://biorender.com/covid-vaccine-tracker">COVID-19 Vaccine & Therapeutics Tracker</a></li>
+       </ul>
+      </div>
+    </div>
+  )
 };
 
 const About = () => {
@@ -623,7 +646,7 @@ const Home = () => {
       <br/>
       <h1 className="title">Welcome!</h1>
       <div className="ctn"> 
-        <p className="detail-sp">The COVID-19 Illustrated Project is an initiative to make epidemiology terms easier to digest for the average human. You can play our quiz to test your knowledge of risk factors, find animations of common terms to share with your friends, and read about the latest science surrounding COVID-19.<br/><br/>
+        <p className="detail-sp">COVID-19 Illustrated is an initiative to make epidemiology terms easier to digest for the average person. You can play our quizzes to test your knowledge of risk factors, search through our glossary of common terms to share with your friends, and read about the latest science surrounding COVID-19 in our resources.<br/><br/>
         
         This project is funded through the #SciCommMake competition hosted by Sigma Xi, The Scientific Research Honor Society and Science Talk.<br/><br/>
         <center>

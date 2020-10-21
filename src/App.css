@@ -1,6 +1,7 @@
 .App-logo {
   animation: spin infinite 20s linear;
   height: 80px;
+  margin-bottom: 10px;
 }
 
 .App-header {
@@ -114,7 +115,7 @@
   position: absolute;
   z-index: 11;
   color: #78A8BE;
-  height: 170vh;
+  height: 210vh;
   background: white;
 }
 
@@ -147,22 +148,6 @@
   cursor: pointer;
   color: white;
   background: #78A8BE;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  padding: 2px 16px;
-  z-index: 100;
-  transition: 0.3s;
-  width: 300px;
-  height: 325px;
-  margin-left: 125px;
-  margin-right: 100px;
-  margin-top: 20px;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .graph {
@@ -209,6 +194,22 @@
       }
   }
 } */
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 2px 16px;
+  z-index: 100;
+  transition: 0.3s;
+  width: 350px;
+  height: 325px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 20px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
 
 @media only screen and (min-width: 786px) {
   .coll-3 {

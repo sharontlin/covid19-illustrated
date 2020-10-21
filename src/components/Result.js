@@ -18,7 +18,7 @@ function Result(props) {
       <div className="quiz-results">
         Your risk factor to others is <strong>{props.quizResult}</strong>.<br/><br/>
 
-        Resources here<br/><br/>
+        Check out our resources page for more information on COVID-19.<br/><br/>
         <form action="/quiz">
         <button className="playAgain">Play Again</button>
         </form>

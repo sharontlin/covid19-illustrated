@@ -249,7 +249,7 @@ const Card = ({questions, appLocale, showDefaultResult, onComplete, customResult
           {appLocale.resultPagePoint.replace("<correctPoints>", correctPoints).replace("<totalPoints>", totalPoints)}
         </h4>
         <br/>
-        Resources here<br/><br/>
+        Check out our resources page for more information on COVID-19.<br/><br/>
         <form action="/quiz">
         <button className="playAgain">Play Again</button>
         </form>
