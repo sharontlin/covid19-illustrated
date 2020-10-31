@@ -14,16 +14,17 @@ export const quiz =  {
       "questionType": "text",
       "answerSelectionType": "single",
       "answers": [
-        "Only the vulnerable and symptomatic people need to be immune",
         "30%",
         "50%",
         "75%",
-        "100% "
+        "100% ",
+        "Only the vulnerable and symptomatic people need to be immune.",
+        "We do not know yet."
       ],
-      "correctAnswer": "4",
+      "correctAnswer": "6",
       "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. The correct answer is 75%.",
-      "explanation": "explanation goes here",
+      "messageForIncorrectAnswer": "Incorrect answer. The correct answer is that we do not know yet.",
+      "explanation": "Source: https://www.jhsph.edu/covid-19/articles/achieving-herd-immunity-with-covid19.html",
       "point": "20",
       "segment": segment.advanced
     },
@@ -37,66 +38,68 @@ export const quiz =  {
         "Up to 1 year",
         "Several years",
         "For life",
-        "We do not know yet"
+        "We do not know yet."
       ],
-      "correctAnswer": "2",
+      "correctAnswer": "6",
       "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. The correct answer is up to 3 months.",
-      "explanation": "explanation goes here",
+      "messageForIncorrectAnswer": "Incorrect answer. The correct answer is that we do not know yet.",
+      "explanation": "Source: https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30783-0/fulltext",
       "point": "20",
       "segment": segment.basic
     },
     {
-      "question": "Immunity means:",
+      "question": "Immunity means... (select all that apply)",
       "questionType": "text",
-      "answerSelectionType": "single",
+      "answerSelectionType": "multiple",
       "answers": [
-        "You did not show symptoms when infected with the virus",
-        "You did not spread the virus to others when infected",
-        "You will not get infected by the virus when exposed to it",
-        "You have never been infected by the virus"
+        "You may have less severe symptoms when exposed to a pathogen.",
+        "You are not likely to spread an infection to others.",
+        "You cannot get infected by a pathogen.",
+        "You have never been infected by a pathogen.",
+        "Your immune system knows how to fight off a pathogen.",
+        "You are less likely to become sick after being exposed to a pathogen"
       ],
-      "correctAnswer": "3",
+      "correctAnswer": [1,2,5,6],
       "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. The correct answer is you will not get infected by the virus when exposed to it.",
-      "explanation": "explanation goes here",
+      "messageForIncorrectAnswer": "Incorrect answer. The correct answers are choices 1, 2, 5, and 6.",
+      "explanation": "",
       "point": "10"
     },
     {
-      "question": "How do you reach immunity against a virus?",
+      "question": "How do you reach immunity against a virus? (select all that apply)",
       "questionType": "text",
       "answerSelectionType": "multiple",
       "answers": [
         "Through infection with the virus followed by recovery",
         "Through vaccination",
-        "Genetic factors",
-        "There is no such thing as permanent immunity to viruses because most of them constantly evolve",
-        "Through medication and treatment"
+        "Genetic factors that don’t involve the immune system",
+        "We cannot reach immunity against all viruses because some of them constantly evolve",
+        "Through medication and treatment",
+        "With antibiotics"
       ],
       "correctAnswer": [1,2,4],
       "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. The correct answer is through infection with the virus followed by recovery, through vaccination, and there is no such thing as permanent immunity to viruses because most of them constantly evolve.",
-      "explanation": "explanation goes here",
+      "messageForIncorrectAnswer": "Incorrect answer. The correct answers are choices 1, 2, and 4.",
+      "explanation": "",
       "point": "30",
       "segment": segment.medium
     },
     {
-      "question": "Vaccines protect an individual from infection when exposed to the virus. What biological information is usually contained in a vaccine?",
+      "question": "Vaccines protect an individual from infection when exposed to the virus. What biological information is usually contained in a vaccine? (select all that apply)",
       "questionType": "text",
       "answerSelectionType": "multiple",
       "answers": [
-        "Proteins of the virus",
         "Genomic material (DNA or RNA) of the virus",
         "Dead version of the virus",
         "Human antibody against the virus",
         "Lab made substances that mimic the virus",
-        "I don't know, I am guessing",
-        "Weakened version of the virus"
+        "Weakened version of the virus",
+        "Fully infectious viruses capable of making someone sick"
       ],
-      "correctAnswer": [1,2],
+      "correctAnswer": [1,2,4,5],
       "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. The correct answer is proteins of the virus and genomic matter (DNA or RNA) of the virus.",
-      "explanation": "explanation goes here",
+      "messageForIncorrectAnswer": "Incorrect answer. The correct answers are choice 1, 2, 4, and 5.",
+      "explanation": "",
       "point": "20"
     },
     {
@@ -104,15 +107,17 @@ export const quiz =  {
       "questionType": "text",
       "answerSelectionType": "single",
       "answers": [
-        "Ideally at birth",
+        "All vaccines we ever need are given at birth",
         "When showing symptoms of an infection",
-        "Before having been exposed, to prevent an infection",
-        "After an infection, to prevent a re-infection"
+        "Before having been exposed to a pathogen, to prevent an infection",
+        "After an infection, to prevent a re-infection",
+        "All vaccines we ever need are given when we are adults",
+        "At the end of an infection, but before we recover"
       ],
       "correctAnswer": "3",
       "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. The correct answer is before having been exposed, to prevent an infection.",
-      "explanation": "explanation goes here",
+      "messageForIncorrectAnswer": "Incorrect answer. The correct answer is before having been exposed to a pathogen, to prevent an infection.",
+      "explanation": "",
       "point": "20"
     },
     {
@@ -120,13 +125,18 @@ export const quiz =  {
         "questionType": "text",
         "answerSelectionType": "single",
         "answers": [
+            "Before the 1500s",
             "1500s",
+            "1600s",
+            "1700s",
+            "1800s",
+            "1900s",
             "2000s"
         ],
         "correctAnswer": "1",
         "messageForCorrectAnswer": "Correct answer. Good job.",
-        "messageForIncorrectAnswer": "Incorrect answer. The correct answer is 1500s.",
-        "explanation": "explanation goes here",
+        "messageForIncorrectAnswer": "Incorrect answer. The correct answer is before the 1500s.",
+        "explanation": "Source: https://www.historyofvaccines.org/timeline/all",
         "point": "20"
     },
     {
@@ -140,7 +150,7 @@ export const quiz =  {
         "correctAnswer": "2",
         "messageForCorrectAnswer": "Correct answer. Good job.",
         "messageForIncorrectAnswer": "Incorrect answer. The correct answer is false.",
-        "explanation": "explanation goes here",
+        "explanation": "",
         "point": "20"
     },
     {
@@ -154,7 +164,7 @@ export const quiz =  {
         "correctAnswer": "2",
         "messageForCorrectAnswer": "Correct answer. Good job.",
         "messageForIncorrectAnswer": "Incorrect answer. The correct answer is false.",
-        "explanation": "explanation goes here",
+        "explanation": "",
         "point": "20"
     },
     {
@@ -168,7 +178,7 @@ export const quiz =  {
         "correctAnswer": "2",
         "messageForCorrectAnswer": "Correct answer. Good job.",
         "messageForIncorrectAnswer": "Incorrect answer. The correct answer is false.",
-        "explanation": "explanation goes here",
+        "explanation": "",
         "point": "20"
     },
     {
@@ -182,7 +192,7 @@ export const quiz =  {
         "correctAnswer": "2",
         "messageForCorrectAnswer": "Correct answer. Good job.",
         "messageForIncorrectAnswer": "Incorrect answer. The correct answer is false.",
-        "explanation": "explanation goes here",
+        "explanation": "",
         "point": "20"
     },
     {
@@ -191,33 +201,34 @@ export const quiz =  {
         "answerSelectionType": "single",
         "answers": [
           "13",
+          "22",
+          "98",
           "177",
+          "580",
           "1023"
         ],
-        "correctAnswer": "2",
+        "correctAnswer": "4",
         "messageForCorrectAnswer": "Correct answer. Good job.",
         "messageForIncorrectAnswer": "Incorrect answer. The correct answer is 177.",
-        "explanation": "explanation goes here",
+        "explanation": "",
         "point": "20"
     },
     {
-        "question": "Vaccine development consists of clinical trials. These are individual phases which test and improve different elements of in the development of the vaccine. Select all which needs to be insured or completed before a vaccine becomes used.",
+        "question": "Vaccine development consists of clinical trials. These are individual phases which test and improve different elements in the development of the vaccine. Which aspects need to be checked or completed before a vaccine becomes used? (select all that apply)",
         "questionType": "text",
         "answerSelectionType": "multiple",
         "answers": [
-          "effectiveness",
-          "toxicity",
-          "tests on target population (at least 30,000 people)",
-          "tests on animals",
-          "long term side effects",
-          "short term side effects",
-          "individual responses to drug (pregnancy, cancer, diabetic)",
-          "I don't know, I am guessing."
+          "Effectiveness",
+          "Toxicity",
+          "Tests on at least 30,000 people",
+          "Long and short term side effects",
+          "Individual responses based on health condition (diabetic, cancer, pregnant, etc)",
+          "Animal testing"
         ],
-        "correctAnswer": [1,2,3,4,5,6],
+        "correctAnswer": [1,2,3,4],
         "messageForCorrectAnswer": "Correct answer. Good job.",
-        "messageForIncorrectAnswer": "Incorrect answer. The correct answer is effectiveness, toxicity, tests on target population (at least 30,000 people), tests on animals, long term side effects, and short term side effects.",
-        "explanation": "explanation goes here",
+        "messageForIncorrectAnswer": "Incorrect answer. The correct answers are choices 1, 2, 3, and 4.",
+        "explanation": "",
         "point": "20"
     },
   ]
